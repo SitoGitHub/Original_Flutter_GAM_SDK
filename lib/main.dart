@@ -42,8 +42,8 @@ class _MyHomePageState extends State<MyHomePage> {
   AdManagerInterstitialAd? _interstitialAd;
   bool _isInterstitialAdLoaded = false;
 
-  final bannerAdUnitId = '/23081467975/beeline_uzbekistan_android/beeline_uz_android_universal_320x50_test2';
-  final interstitialAdUnitId = '/21775744923/example/interstitial';
+  final bannerAdUnitId = '/23081467975/beeline_uzbekistan_android/beeline_uz_android_manual_veon_320x50';
+  final interstitialAdUnitId = '/23081467975/beeline_uzbekistan_android/beeline_uz_android_universal_interstitial_test2';
 
   @override
   void initState() {
@@ -159,6 +159,23 @@ class _MyHomePageState extends State<MyHomePage> {
           Expanded(
             child: ListView(
               children: [
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 1.2,
+                  child: const Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.arrow_downward, size: 60, color: Colors.grey),
+                        SizedBox(height: 20),
+                        Text(
+                          '👇 Scroll down for ads 👇',
+                          style: TextStyle(fontSize: 20, color: Colors.grey),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+
                 for (int i = 0; i < _bannerAds.length; i++)
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 8.0),
